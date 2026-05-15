@@ -459,13 +459,13 @@ def stats():
     }
 
 @app.get("/api/seed")
-def seed_database():
+def run_seed():
 
-    from seed_database import seed_database
+    import seed
 
-    seed_database()
+    seed.seed_database()
 
     return {
         "success": True,
-        "message": "Database seeded successfully"
+        "message": "Production database seeded"
     }
