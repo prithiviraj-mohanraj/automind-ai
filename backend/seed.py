@@ -9,465 +9,470 @@ from database import (
 
 fake = Faker("en_IN")
 
-# ─────────────────────────────────────────────
-# RESET DATABASE
-# ─────────────────────────────────────────────
-
-reset_database()
-
-conn = get_db()
-
-# ─────────────────────────────────────────────
-# CUSTOMERS
-# ─────────────────────────────────────────────
-
-customers = [
-
-    "Arun Kumar",
-    "Praveen Raj",
-    "Vigneshwaran",
-    "Karthikeyan",
-    "Sathish Kumar",
-    "Gokul Raj",
-    "Saravanan",
-    "Harishankar",
-    "Dinesh Babu",
-    "Madhan Kumar",
-    "Ashwin Prabhu",
-    "Naveen Kumar",
-    "Lokeshwaran",
-    "Anand Raj",
-    "Balamurugan",
-    "Suresh Babu",
-    "Prithiv Raj",
-    "Kavin Kumar",
-    "Vetri Selvan",
-    "Jeeva",
-    "Ananya Iyer",
-    "Keerthana",
-    "Harini",
-    "Divya Lakshmi",
-    "Shruthi",
-    "Nivetha",
-    "Gayathri",
-    "Pavithra",
-    "Meenakshi",
-    "Aarthi",
-    "Janani",
-    "Roshini",
-    "Swetha",
-    "Mahalakshmi",
-    "Nandhini",
-    "Deepika",
-    "Sumathi",
-    "Sivakumar",
-    "Tharun",
-    "Kishore"
-]
 
-# ─────────────────────────────────────────────
-# CARS
-# ─────────────────────────────────────────────
+def seed_database():
+
+    # RESET DATABASE
+
+    reset_database()
+
+    conn = get_db()
+
+    # ─────────────────────────────────────────────
+    # CUSTOMERS
+    # ─────────────────────────────────────────────
+
+    customers = [
+
+        "Arun Kumar",
+        "Praveen Raj",
+        "Vigneshwaran",
+        "Karthikeyan",
+        "Sathish Kumar",
+        "Gokul Raj",
+        "Saravanan",
+        "Harishankar",
+        "Dinesh Babu",
+        "Madhan Kumar",
+        "Ashwin Prabhu",
+        "Naveen Kumar",
+        "Lokeshwaran",
+        "Anand Raj",
+        "Balamurugan",
+        "Suresh Babu",
+        "Prithiv Raj",
+        "Kavin Kumar",
+        "Vetri Selvan",
+        "Jeeva",
+        "Ananya Iyer",
+        "Keerthana",
+        "Harini",
+        "Divya Lakshmi",
+        "Shruthi",
+        "Nivetha",
+        "Gayathri",
+        "Pavithra",
+        "Meenakshi",
+        "Aarthi",
+        "Janani",
+        "Roshini",
+        "Swetha",
+        "Mahalakshmi",
+        "Nandhini",
+        "Deepika",
+        "Sumathi",
+        "Sivakumar",
+        "Tharun",
+        "Kishore"
+    ]
 
-cars = [
+    # ─────────────────────────────────────────────
+    # CARS
+    # ─────────────────────────────────────────────
 
-    "Hyundai Creta",
-    "Hyundai i20",
-    "Hyundai Verna",
+    cars = [
 
-    "Maruti Swift",
-    "Maruti Baleno",
-    "Maruti Brezza",
+        "Hyundai Creta",
+        "Hyundai i20",
+        "Hyundai Verna",
 
-    "Tata Nexon",
-    "Tata Punch",
-    "Tata Harrier",
+        "Maruti Swift",
+        "Maruti Baleno",
+        "Maruti Brezza",
 
-    "Mahindra XUV700",
-    "Mahindra Scorpio N",
-    "Mahindra Thar",
+        "Tata Nexon",
+        "Tata Punch",
+        "Tata Harrier",
 
-    "Toyota Innova Crysta",
-    "Toyota Fortuner",
-    "Toyota Glanza",
+        "Mahindra XUV700",
+        "Mahindra Scorpio N",
+        "Mahindra Thar",
 
-    "Honda City",
-    "Honda Amaze",
-    "Honda Elevate",
+        "Toyota Innova Crysta",
+        "Toyota Fortuner",
+        "Toyota Glanza",
 
-    "Kia Seltos",
-    "Kia Sonet",
+        "Honda City",
+        "Honda Amaze",
+        "Honda Elevate",
 
-    "Volkswagen Virtus",
-    "Skoda Slavia",
+        "Kia Seltos",
+        "Kia Sonet",
 
-    "Renault Triber",
-    "Nissan Magnite"
-]
+        "Volkswagen Virtus",
+        "Skoda Slavia",
 
-# ─────────────────────────────────────────────
-# ISSUES
-# ─────────────────────────────────────────────
+        "Renault Triber",
+        "Nissan Magnite"
+    ]
 
-issues = [
+    # ─────────────────────────────────────────────
+    # ISSUES
+    # ─────────────────────────────────────────────
 
-    "engine overheating and smoke from bonnet",
+    issues = [
 
-    "brake vibration while driving",
+        "engine overheating and smoke from bonnet",
 
-    "brake noise during reverse",
+        "brake vibration while driving",
 
-    "battery draining overnight",
+        "brake noise during reverse",
 
-    "ac not cooling properly",
+        "battery draining overnight",
 
-    "oil leakage under engine",
+        "ac not cooling properly",
 
-    "suspension noise on speed breaker",
+        "oil leakage under engine",
 
-    "vehicle pulling left side",
+        "suspension noise on speed breaker",
 
-    "steering vibration at high speed",
+        "vehicle pulling left side",
 
-    "engine knocking sound",
+        "steering vibration at high speed",
 
-    "accident front bumper damage",
+        "engine knocking sound",
 
-    "rear bumper dent",
+        "accident front bumper damage",
 
-    "headlight not working",
+        "rear bumper dent",
 
-    "wiring issue after rain",
+        "headlight not working",
 
-    "tyre puncture and wheel alignment issue",
+        "wiring issue after rain",
 
-    "general periodic service",
+        "tyre puncture and wheel alignment issue",
 
-    "engine starting problem",
+        "general periodic service",
 
-    "coolant leakage issue",
+        "engine starting problem",
 
-    "gear shifting hard",
+        "coolant leakage issue",
 
-    "check engine light on"
-]
+        "gear shifting hard",
 
-# ─────────────────────────────────────────────
-# TECHNICIANS
-# ─────────────────────────────────────────────
+        "check engine light on"
+    ]
 
-technicians = [
+    # ─────────────────────────────────────────────
+    # TECHNICIANS
+    # ─────────────────────────────────────────────
 
-    "Aravind M.",
-    "Suresh K.",
-    "Lokesh R.",
-    "Prabhu V.",
-    "Naveen Kumar",
-    "Dinesh Raj",
-    "Karthik S.",
-    "Saravana Kumar"
-]
+    technicians = [
 
-# ─────────────────────────────────────────────
-# WORKFLOW STAGES
-# ─────────────────────────────────────────────
+        "Aravind M.",
+        "Suresh K.",
+        "Lokesh R.",
+        "Prabhu V.",
+        "Naveen Kumar",
+        "Dinesh Raj",
+        "Karthik S.",
+        "Saravana Kumar"
+    ]
 
-workflow_stages = [
+    # ─────────────────────────────────────────────
+    # WORKFLOW STAGES
+    # ─────────────────────────────────────────────
 
-    "Booked",
+    workflow_stages = [
 
-    "Diagnosing",
+        "Booked",
 
-    "Awaiting Parts",
+        "Diagnosing",
 
-    "Repair In Progress",
+        "Awaiting Parts",
 
-    "QA Inspection",
+        "Repair In Progress",
 
-    "Ready Delivery",
+        "QA Inspection",
 
-    "Delivered"
-]
+        "Ready Delivery",
 
-# ─────────────────────────────────────────────
-# STATUS
-# ─────────────────────────────────────────────
+        "Delivered"
+    ]
 
-statuses = [
+    # ─────────────────────────────────────────────
+    # STATUS
+    # ─────────────────────────────────────────────
 
-    "pending",
+    statuses = [
 
-    "in_progress",
+        "pending",
 
-    "waiting",
+        "in_progress",
 
-    "completed"
-]
+        "waiting",
 
-# ─────────────────────────────────────────────
-# PRIORITIES
-# ─────────────────────────────────────────────
+        "completed"
+    ]
 
-priorities = [
+    # ─────────────────────────────────────────────
+    # PRIORITIES
+    # ─────────────────────────────────────────────
 
-    "LOW",
+    priorities = [
 
-    "MEDIUM",
+        "LOW",
 
-    "HIGH",
+        "MEDIUM",
 
-    "CRITICAL"
-]
+        "HIGH",
 
-# ─────────────────────────────────────────────
-# INSURANCE
-# ─────────────────────────────────────────────
+        "CRITICAL"
+    ]
 
-insurance_providers = [
+    # ─────────────────────────────────────────────
+    # INSURANCE
+    # ─────────────────────────────────────────────
 
-    "HDFC ERGO",
+    insurance_providers = [
 
-    "ICICI Lombard",
+        "HDFC ERGO",
 
-    "Bajaj Allianz",
+        "ICICI Lombard",
 
-    "TATA AIG",
+        "Bajaj Allianz",
 
-    "Reliance General",
+        "TATA AIG",
 
-    "No Insurance"
-]
+        "Reliance General",
 
-# ─────────────────────────────────────────────
-# SERVICE TYPES
-# ─────────────────────────────────────────────
+        "No Insurance"
+    ]
 
-service_types = [
+    # ─────────────────────────────────────────────
+    # SERVICE TYPES
+    # ─────────────────────────────────────────────
 
-    "Periodic Service",
+    service_types = [
 
-    "Repair",
+        "Periodic Service",
 
-    "Emergency Repair",
+        "Repair",
 
-    "Insurance Claim",
+        "Emergency Repair",
 
-    "Diagnostics"
-]
+        "Insurance Claim",
 
-# ─────────────────────────────────────────────
-# INVENTORY
-# ─────────────────────────────────────────────
+        "Diagnostics"
+    ]
 
-inventory_parts = [
+    # ─────────────────────────────────────────────
+    # INVENTORY
+    # ─────────────────────────────────────────────
 
-    ("Engine Oil", "Engine", 120, 2200),
-    ("Oil Filter", "Engine", 140, 450),
-    ("Air Filter", "Engine", 100, 650),
-    ("Fuel Filter", "Engine", 85, 750),
+    inventory_parts = [
 
-    ("Radiator Hose", "Cooling", 40, 950),
-    ("Coolant", "Cooling", 100, 900),
-    ("Water Pump", "Cooling", 15, 4500),
-    ("Thermostat", "Cooling", 30, 1800),
+        ("Engine Oil", "Engine", 120, 2200),
+        ("Oil Filter", "Engine", 140, 450),
+        ("Air Filter", "Engine", 100, 650),
+        ("Fuel Filter", "Engine", 85, 750),
 
-    ("Timing Belt", "Engine", 20, 5500),
-    ("Spark Plug", "Engine", 100, 350),
-    ("Gasket Kit", "Engine", 25, 3200),
+        ("Radiator Hose", "Cooling", 40, 950),
+        ("Coolant", "Cooling", 100, 900),
+        ("Water Pump", "Cooling", 15, 4500),
+        ("Thermostat", "Cooling", 30, 1800),
 
-    ("Brake Pads", "Brakes", 70, 3200),
-    ("Brake Disc", "Brakes", 40, 6200),
-    ("Brake Rotor", "Brakes", 30, 4800),
-    ("Brake Fluid", "Brakes", 60, 550),
+        ("Timing Belt", "Engine", 20, 5500),
+        ("Spark Plug", "Engine", 100, 350),
+        ("Gasket Kit", "Engine", 25, 3200),
 
-    ("Battery", "Electrical", 25, 8500),
-    ("Alternator Belt", "Electrical", 30, 1200),
-    ("Fuse Kit", "Electrical", 100, 350),
-    ("Relay", "Electrical", 80, 500),
+        ("Brake Pads", "Brakes", 70, 3200),
+        ("Brake Disc", "Brakes", 40, 6200),
+        ("Brake Rotor", "Brakes", 30, 4800),
+        ("Brake Fluid", "Brakes", 60, 550),
 
-    ("Wiring Kit", "Electrical", 20, 4500),
-    ("Headlight Bulb", "Electrical", 100, 650),
+        ("Battery", "Electrical", 25, 8500),
+        ("Alternator Belt", "Electrical", 30, 1200),
+        ("Fuse Kit", "Electrical", 100, 350),
+        ("Relay", "Electrical", 80, 500),
 
-    ("Cabin Air Filter", "HVAC", 50, 850),
-    ("AC Gas", "HVAC", 30, 2500),
+        ("Wiring Kit", "Electrical", 20, 4500),
+        ("Headlight Bulb", "Electrical", 100, 650),
 
-    ("Bumper Assembly", "Body", 12, 9500),
-    ("Paint Kit", "Body", 30, 2200),
+        ("Cabin Air Filter", "HVAC", 50, 850),
+        ("AC Gas", "HVAC", 30, 2500),
 
-    ("Shock Absorber", "Suspension", 25, 7800),
+        ("Bumper Assembly", "Body", 12, 9500),
+        ("Paint Kit", "Body", 30, 2200),
 
-    ("Wheel Bearing", "Suspension", 35, 3200)
-]
+        ("Shock Absorber", "Suspension", 25, 7800),
 
-# ─────────────────────────────────────────────
-# INSERT INVENTORY
-# ─────────────────────────────────────────────
+        ("Wheel Bearing", "Suspension", 35, 3200)
+    ]
 
-for item in inventory_parts:
+    # ─────────────────────────────────────────────
+    # INSERT INVENTORY
+    # ─────────────────────────────────────────────
 
-    conn.execute(
-        """
-        INSERT INTO inventory (
-            part_name,
-            category,
-            quantity,
-            unit_cost
+    for item in inventory_parts:
+
+        conn.execute(
+            """
+            INSERT INTO inventory (
+                part_name,
+                category,
+                quantity,
+                unit_cost
+            )
+            VALUES (?, ?, ?, ?)
+            """,
+            item
         )
-        VALUES (?, ?, ?, ?)
-        """,
-        item
-    )
 
-# ─────────────────────────────────────────────
-# GENERATE BOOKINGS
-# ─────────────────────────────────────────────
+    # ─────────────────────────────────────────────
+    # GENERATE BOOKINGS
+    # ─────────────────────────────────────────────
 
-for _ in range(250):
+    for _ in range(250):
 
-    customer = random.choice(customers)
+        customer = random.choice(customers)
 
-    car = random.choice(cars)
+        car = random.choice(cars)
 
-    issue = random.choice(issues)
+        issue = random.choice(issues)
 
-    technician = random.choice(technicians)
+        technician = random.choice(technicians)
 
-    workflow_stage = random.choice(
-        workflow_stages
-    )
-
-    status = random.choice(statuses)
-
-    priority = random.choice(priorities)
-
-    insurance = random.choice(
-        insurance_providers
-    )
-
-    service_type = random.choice(
-        service_types
-    )
-
-    vehicle_number = (
-        f"TN{random.randint(1,99)}"
-        f"{random.choice(['A','B','C','D'])}"
-        f"{random.randint(1000,9999)}"
-    )
-
-    estimated_cost = random.randint(
-        2000,
-        120000
-    )
-
-    insurance_active = 0
-
-    if insurance != "No Insurance":
-        insurance_active = 1
-
-    conn.execute(
-        """
-        INSERT INTO bookings (
-
-            customer,
-            vehicle_number,
-            car_model,
-            description,
-            issue,
-            technician,
-            status,
-            workflow_stage,
-            eta_minutes,
-            delay_risk,
-            service_type,
-            priority,
-            estimated_cost,
-            insurance_provider,
-            insurance_active
-
+        workflow_stage = random.choice(
+            workflow_stages
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """,
-        (
-            customer,
-            vehicle_number,
-            car,
-            issue,
-            issue,
-            technician,
-            status,
-            workflow_stage,
-            random.randint(30, 480),
-            random.randint(5, 95),
-            service_type,
-            priority,
-            estimated_cost,
-            insurance,
-            insurance_active
+
+        status = random.choice(statuses)
+
+        priority = random.choice(priorities)
+
+        insurance = random.choice(
+            insurance_providers
         )
-    )
 
-# ─────────────────────────────────────────────
-# ACTIVITY LOGS
-# ─────────────────────────────────────────────
-
-agents = [
-
-    "BookingAgent",
-
-    "InventoryAgent",
-
-    "DelayAgent",
-
-    "BillingAgent",
-
-    "SupportAgent"
-]
-
-actions = [
-
-    "Vehicle diagnosed",
-
-    "Inventory checked",
-
-    "Delay risk calculated",
-
-    "Insurance verified",
-
-    "Repair estimate generated",
-
-    "Vehicle inspection started",
-
-    "Parts ordered",
-
-    "Repair completed",
-
-    "Vehicle delivered"
-]
-
-for _ in range(1000):
-
-    conn.execute(
-        """
-        INSERT INTO activity_log (
-
-            agent,
-            action,
-            details,
-            booking_id
-
+        service_type = random.choice(
+            service_types
         )
-        VALUES (?, ?, ?, ?)
-        """,
-        (
-            random.choice(agents),
-            random.choice(actions),
-            fake.sentence(),
-            random.randint(1, 250)
+
+        vehicle_number = (
+            f"TN{random.randint(1,99)}"
+            f"{random.choice(['A','B','C','D'])}"
+            f"{random.randint(1000,9999)}"
         )
-    )
 
-conn.commit()
+        estimated_cost = random.randint(
+            2000,
+            120000
+        )
 
-conn.close()
+        insurance_active = 0
 
-print("SUCCESS: Enterprise automotive dataset generated.")
+        if insurance != "No Insurance":
+            insurance_active = 1
+
+        conn.execute(
+            """
+            INSERT INTO bookings (
+
+                customer,
+                vehicle_number,
+                car_model,
+                description,
+                issue,
+                technician,
+                status,
+                workflow_stage,
+                eta_minutes,
+                delay_risk,
+                service_type,
+                priority,
+                estimated_cost,
+                insurance_provider,
+                insurance_active
+
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                customer,
+                vehicle_number,
+                car,
+                issue,
+                issue,
+                technician,
+                status,
+                workflow_stage,
+                random.randint(30, 480),
+                random.randint(5, 95),
+                service_type,
+                priority,
+                estimated_cost,
+                insurance,
+                insurance_active
+            )
+        )
+
+    # ─────────────────────────────────────────────
+    # ACTIVITY LOGS
+    # ─────────────────────────────────────────────
+
+    agents = [
+
+        "BookingAgent",
+
+        "InventoryAgent",
+
+        "DelayAgent",
+
+        "BillingAgent",
+
+        "SupportAgent"
+    ]
+
+    actions = [
+
+        "Vehicle diagnosed",
+
+        "Inventory checked",
+
+        "Delay risk calculated",
+
+        "Insurance verified",
+
+        "Repair estimate generated",
+
+        "Vehicle inspection started",
+
+        "Parts ordered",
+
+        "Repair completed",
+
+        "Vehicle delivered"
+    ]
+
+    for _ in range(1000):
+
+        conn.execute(
+            """
+            INSERT INTO activity_log (
+
+                agent,
+                action,
+                details,
+                booking_id
+
+            )
+            VALUES (?, ?, ?, ?)
+            """,
+            (
+                random.choice(agents),
+                random.choice(actions),
+                fake.sentence(),
+                random.randint(1, 250)
+            )
+        )
+
+    conn.commit()
+
+    conn.close()
+
+    print("SUCCESS: Enterprise automotive dataset generated.")
+
+
+if __name__ == "__main__":
+    seed_database()
