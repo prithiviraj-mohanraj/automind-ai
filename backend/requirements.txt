@@ -4,3 +4,4 @@ python-dotenv
 groq
 faker
 pydantic
+rapidfuzz
