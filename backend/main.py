@@ -457,3 +457,15 @@ def stats():
         "pending": pending,
         "completed": completed
     }
+
+@app.get("/api/seed")
+def seed_database():
+
+    from seed_database import seed_database
+
+    seed_database()
+
+    return {
+        "success": True,
+        "message": "Database seeded successfully"
+    }
