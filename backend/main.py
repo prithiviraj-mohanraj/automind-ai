@@ -29,6 +29,24 @@ app.add_middleware(
 
 init_db()
 
+# AUTO SEED IF EMPTY
+
+from seed import seed_database
+
+conn = get_db()
+
+count = conn.execute(
+    "SELECT COUNT(*) as c FROM bookings"
+).fetchone()["c"]
+
+conn.close()
+
+if count == 0:
+
+    print("DATABASE EMPTY -> AUTO SEEDING")
+
+    seed_database()
+
 # ─────────────────────────────────────────────
 # MODELS
 # ─────────────────────────────────────────────
