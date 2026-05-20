@@ -61,7 +61,9 @@ def root():
     return {
         "message": "AutoMind AI Backend Running"
     }
-
+@app.head("/")
+def root_head():
+    return
 
 # ─────────────────────────────────────────────
 # BOOKINGS
